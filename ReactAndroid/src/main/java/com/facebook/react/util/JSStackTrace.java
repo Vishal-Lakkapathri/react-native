@@ -18,9 +18,11 @@ public class JSStackTrace {
   final private static Pattern mJsModuleIdPattern = Pattern.compile("(?:^|[/\\\\])(\\d+\\.js)$");
 
   public static String format(String message, ReadableArray stack) {
+    System.out.print("Narendra ---- ");
     StringBuilder stringBuilder = new StringBuilder(message).append(", stack:\n");
     for (int i = 0; i < stack.size(); i++) {
       ReadableMap frame = stack.getMap(i);
+       System.out.print("Narendra ---- method " + frame.getString("methodName"));
       stringBuilder
         .append(frame.getString("methodName"))
         .append("@")
